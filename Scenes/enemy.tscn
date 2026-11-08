@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dju1wkhpxunhb"]
+
+[ext_resource type="Script" uid="uid://dngq5c1cd7fcs" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://bwqfqdcue86hh" path="res://Assets/Spritesheet.png" id="2_afpow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmg03"]
+size = Vector2(15.999999, 16)
+
+[sub_resource type="Animation" id="Animation_fo5ed"]
+resource_name = "Hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.92872024, 0.010559217, 0.49618548, 1), Color(1, 1, 1, 1), Color(0.92872024, 0.010559217, 0.49618548, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5ukr8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.92872024, 0.010559217, 0.49618548, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o06y3"]
+_data = {
+&"Hit": SubResource("Animation_fo5ed"),
+&"RESET": SubResource("Animation_5ukr8")
+}
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1795961283 groups=["Enemy"]]
+scale = Vector2(3, 3)
+script = ExtResource("1_1f0kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=235801510]
+modulate = Color(0.92872024, 0.010559217, 0.49618548, 1)
+scale = Vector2(0.9523808, 0.95238096)
+texture = ExtResource("2_afpow")
+region_enabled = true
+region_rect = Rect2(477, 86, 14, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1313824538]
+shape = SubResource("RectangleShape2D_qmg03")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1977808709]
+libraries/ = SubResource("AnimationLibrary_o06y3")

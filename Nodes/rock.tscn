@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://47t07bqhvv7t"]
+
+[ext_resource type="Texture2D" uid="uid://bwqfqdcue86hh" path="res://Assets/Spritesheet.png" id="1_5svky"]
+[ext_resource type="Script" uid="uid://bogqu2gkfc3p2" path="res://Scripts/rock.gd" id="1_x88bc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x88bc"]
+size = Vector2(16, 16)
+
+[node name="Rock" type="CharacterBody2D" unique_id=1758335591]
+scale = Vector2(3, 3)
+script = ExtResource("1_x88bc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1395123393]
+modulate = Color(0.40784314, 0.42745098, 0.1882353, 1)
+texture = ExtResource("1_5svky")
+region_enabled = true
+region_rect = Rect2(204.78217, 18.958364, 13.432098, 14.288065)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=116104575]
+visible = false
+shape = SubResource("RectangleShape2D_x88bc")
