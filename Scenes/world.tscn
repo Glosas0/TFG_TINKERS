@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d3cpj481x3my6" path="res://Scripts/hook.gd" id="3_o06y3"]
 [ext_resource type="Script" uid="uid://bglnmji404g0a" path="res://Scripts/facing_indicator.gd" id="4_5v1tr"]
 [ext_resource type="Script" uid="uid://7juwpkywjf8c" path="res://Scripts/enemies.gd" id="4_fo5ed"]
+[ext_resource type="Script" uid="uid://pyfwo6b4pkss" path="res://Scripts/niebla.gd" id="5_0fj1v"]
 [ext_resource type="Script" uid="uid://cdame1csgfxcy" path="res://ui.gd" id="5_fo5ed"]
 [ext_resource type="Script" uid="uid://qw4tplk75n1h" path="res://Scripts/minimap_draw.gd" id="6_minimap"]
 [ext_resource type="Script" uid="uid://ch1o48n4y7o44" path="res://Scripts/dungeon_grid.gd" id="8_k7acu"]
@@ -1171,6 +1172,9 @@ script = ExtResource("3_o06y3")
 position = Vector2(0.625, 0.625)
 scale = Vector2(0.375, 0.375)
 script = ExtResource("4_5v1tr")
+
+[node name="Node" type="Node" parent="Player" unique_id=1312578463]
+script = ExtResource("5_0fj1v")
 
 [node name="Generation" type="Node" parent="." unique_id=2129271288]
 script = ExtResource("3_5a7ea")
